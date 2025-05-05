@@ -98,9 +98,24 @@ def download_license_from_github():
         json_files.sort(key=lambda x: x["name"])
         for i, file in enumerate(json_files):
             print(f"{i + 1}. {file['name']}")
+        print("C. Complete Package (All licenses)")
 
         # Get user's choice
-        choice = int(input("Enter the number of the license you want to download: ")) - 1
+        choice = input("Enter the number of the license you want to download: ")
+        if choice.lower() == 'c':
+            for file in json_files:
+                download_url = file["download_url"]
+                response = requests.get(download_url)
+                response.raise_for_status()
+                response_text_lines = response.text.splitlines()
+                response_text_non_empty = [line for line in response_text_lines if line.strip()]
+
+                # Save the file to the licenses directory
+                with open(os.path.join(licenses_dir, file["name"]), "w") as f:
+                    f.write("\n".join(response_text_non_empty))
+                    print(f"License '{file['name']}' downloaded successfully to the 'licenses' directory.")
+            return
+        choice = int(choice) - 1
         if 0 <= choice < len(json_files):
             selected_file = json_files[choice]
             download_url = selected_file["download_url"]
