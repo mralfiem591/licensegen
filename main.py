@@ -95,6 +95,7 @@ def download_license_from_github():
         # List available files
         print("Available licenses in the GitHub repository:")
         json_files = [file for file in files if file["name"].endswith(".json")]
+        json_files.sort(key=lambda x: x["name"])
         for i, file in enumerate(json_files):
             print(f"{i + 1}. {file['name']}")
 
