@@ -9,6 +9,27 @@ This project is a Python-based license generator that allows users to create `LI
 - Allows users to download new license templates from a GitHub repository.
 - Automatically replaces placeholders like `<YEAR>` and `<COPYRIGHT HOLDER>` in the license text.
 
+## Licenses
+
+### Built-In
+
+- MIT License (mit.json)
+- Public Domain (public-domain.json)
+
+## Downloadable
+
+- Academic Free License v3.0 (afl-3.0.json)
+- Apache License 2.0 (apache-2.0.json)
+- BSD 3-Clause License (bsd-3-clause.json)
+- Creative Commons Zero v1.0 Universal (cc0-1.0.json)
+- Eclipse Public License 2.0 (epl-2.0.json)
+- GNU General Public License v3.0 (gpl-3.0.json)
+- ISC License (isc.json)
+- MIT License (mit.json)
+- Mozilla Public License 2.0 (mpl-2.0.json)
+- Public Domain (public-domain.json)
+- The Unlicense (unlicense.json)
+
 ## Prerequisites
 
 - Python 3.6 or higher
