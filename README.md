@@ -13,6 +13,7 @@ This project is a Python-based license generator that allows users to create `LI
 
 ### Built-In
 
+> From **Default Package**
 - MIT License (mit.json)
 - Public Domain (pd.json)
 
