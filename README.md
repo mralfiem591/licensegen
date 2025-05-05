@@ -34,6 +34,7 @@ This project is a Python-based license generator that allows users to create `LI
 - The Unlicense (unlicense.json)
 - Zlib License (zlib.json)
 - C (Complete Package (All Licenses))
+- D (Default Package (MIT, Public Domain))
 
 ## Prerequisites
 
