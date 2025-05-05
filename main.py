@@ -99,6 +99,7 @@ def download_license_from_github():
         for i, file in enumerate(json_files):
             print(f"{i + 1}. {file['name']}")
         print("C. Complete Package (All licenses)")
+        print("D. Default Package (MIT, Public Domain)")
 
         # Get user's choice
         choice = input("Enter the number of the license you want to download: ")
@@ -114,6 +115,23 @@ def download_license_from_github():
                 with open(os.path.join(licenses_dir, file["name"]), "w") as f:
                     f.write("\n".join(response_text_non_empty))
                     print(f"License '{file['name']}' downloaded successfully to the 'licenses' directory.")
+            return
+        if choice.lower() == 'd':
+            # Download the default package (MIT and Public Domain)
+            default_files = ["mit.json", "pd.json"]
+            for filename in default_files:
+                file = next((f for f in json_files if f["name"] == filename), None)
+                if file:
+                    download_url = file["download_url"]
+                    response = requests.get(download_url)
+                    response.raise_for_status()
+                    response_text_lines = response.text.splitlines()
+                    response_text_non_empty = [line for line in response_text_lines if line.strip()]
+
+                    # Save the file to the licenses directory
+                    with open(os.path.join(licenses_dir, file["name"]), "w") as f:
+                        f.write("\n".join(response_text_non_empty))
+                        print(f"License '{file['name']}' downloaded successfully to the 'licenses' directory.")
             return
         choice = int(choice) - 1
         if 0 <= choice < len(json_files):
