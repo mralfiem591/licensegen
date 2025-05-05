@@ -14,12 +14,14 @@ This project is a Python-based license generator that allows users to create `LI
 ### Built-In
 
 - MIT License (mit.json)
-- Public Domain (public-domain.json)
+- Public Domain (pd.json)
 
 ## Downloadable
 
 - Academic Free License v3.0 (afl-3.0.json)
 - Apache License 2.0 (apache-2.0.json)
+- Artistic License 2.0 (artistic-2.0.json)
+- Boost Software License 1.0 (boost-1.0.json)
 - BSD 3-Clause License (bsd-3-clause.json)
 - Creative Commons Zero v1.0 Universal (cc0-1.0.json)
 - Eclipse Public License 2.0 (epl-2.0.json)
@@ -27,8 +29,10 @@ This project is a Python-based license generator that allows users to create `LI
 - ISC License (isc.json)
 - MIT License (mit.json)
 - Mozilla Public License 2.0 (mpl-2.0.json)
-- Public Domain (public-domain.json)
+- Open Software License 3.0 (osl-3.0.json)
+- Public Domain (pd.json)
 - The Unlicense (unlicense.json)
+- Zlib License (zlib.json)
 
 ## Prerequisites
 
