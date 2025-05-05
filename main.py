@@ -136,7 +136,7 @@ def download_license_from_github():
     except requests.RequestException as e:
         print(f"Error fetching licenses from GitHub: {e}")
     except ValueError:
-        print("Invalid input. Please enter a valid number.")
+        print("Invalid input. Please enter a valid number, or 'C'.")
 
 if __name__ == "__main__":
     generate_license()
