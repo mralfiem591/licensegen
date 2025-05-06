@@ -95,7 +95,7 @@ To add a new license manually:
 1. Create a JSON file in the `licenses` directory.
 2. Follow the format of existing license JSON files (e.g., `meta` and `data` fields).
    
-**Example: MIT**
+**Example: MIT (mit.json)**
 ```json
 {
     "meta": {
@@ -106,6 +106,9 @@ To add a new license manually:
     }
 }
 ```
+
+> No matter what the file name is, it will show as whatever is in the **meta > name** field.
+
 ## Example Usage
 
 When you run the script, you will see a menu of available licenses. Select a license by entering its number, and the script will guide you through the process of generating a `LICENSE` file.
