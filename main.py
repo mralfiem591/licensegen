@@ -114,7 +114,9 @@ def download_license_from_github():
                 response.raise_for_status()
                 response_text_lines = response.text.splitlines()
                 response_text_non_empty = [line for line in response_text_lines if line.strip()]
-
+                if os.path.exists(os.path.join(licenses_dir, file["name"])):
+                    print(f"License '{file['name']}' already exists. Skipping download.")
+                    continue
                 # Save the file to the licenses directory
                 with open(os.path.join(licenses_dir, file["name"]), "w") as f:
                     f.write("\n".join(response_text_non_empty))
@@ -131,7 +133,9 @@ def download_license_from_github():
                     response.raise_for_status()
                     response_text_lines = response.text.splitlines()
                     response_text_non_empty = [line for line in response_text_lines if line.strip()]
-
+                    if os.path.exists(os.path.join(licenses_dir, file["name"])):
+                        print(f"License '{file['name']}' already exists. Skipping download.")
+                        continue
                     # Save the file to the licenses directory
                     with open(os.path.join(licenses_dir, file["name"]), "w") as f:
                         f.write("\n".join(response_text_non_empty))
@@ -147,12 +151,13 @@ def download_license_from_github():
             response.raise_for_status()
             response_text_lines = response.text.splitlines()
             response_text_non_empty = [line for line in response_text_lines if line.strip()]
-
+            if os.path.exists(os.path.join(licenses_dir, selected_file["name"])):
+                print(f"License '{selected_file['name']}' already exists. Skipping download.")
+                return
             # Save the file to the licenses directory
             with open(os.path.join(licenses_dir, selected_file["name"]), "w") as f:
                 f.write("\n".join(response_text_non_empty))
-
-            print(f"License '{selected_file['name']}' downloaded successfully to the 'licenses' directory.")
+                print(f"License '{selected_file['name']}' downloaded successfully to the 'licenses' directory.")
         else:
             print("Invalid selection.")
     except requests.RequestException as e:
