@@ -1,11 +1,12 @@
 import os
 import json
 import datetime
-import requests  # Add this to your imports
+import requests
 
 def generate_license():
     """Generates a LICENSE file based on user selection from JSON templates."""
     os.system("cls" if os.name == "nt" else "clear")
+    print("License Generator is loading...")
     os.makedirs(os.path.join(os.path.dirname(__file__), "generated"), exist_ok=True)
     os.makedirs(os.path.join(os.path.dirname(__file__), "licenses"), exist_ok=True)
     licenses_dir = os.path.join(os.path.dirname(__file__), "licenses")
@@ -29,11 +30,12 @@ def generate_license():
                 print(f"Warning: '{filename}' is missing the 'data.license' field.")
 
     if not available_licenses:
+        os.system("cls" if os.name == "nt" else "clear")
         print("No valid license templates found in the 'licenses' directory.")
         if input("Do you want to download a new license template from GitHub? (y/n): ").lower() == 'y':
             download_license_from_github()
         return
-
+    os.system("cls" if os.name == "nt" else "clear")
     # Display the menu of available licenses
     license_names = sorted(available_licenses.keys())
     print("Available Licenses:")
@@ -83,6 +85,7 @@ def generate_license():
 def download_license_from_github():
     """Download a license JSON file from a GitHub repository."""
     os.system("cls" if os.name == "nt" else "clear")
+    print("Preparing GitHub license downloader...")
     github_repo = "https://api.github.com/repos/mralfiem591/licenses/contents"
     licenses_dir = os.path.join(os.path.dirname(__file__), "licenses")
 
@@ -96,6 +99,7 @@ def download_license_from_github():
         print("Available licenses in the GitHub repository:")
         json_files = [file for file in files if file["name"].endswith(".json")]
         json_files.sort(key=lambda x: x["name"])
+        os.system("cls" if os.name == "nt" else "clear")
         for i, file in enumerate(json_files):
             print(f"{i + 1}. {file['name']}")
         print("C. Complete Package (All licenses)")
