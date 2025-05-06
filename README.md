@@ -19,6 +19,8 @@ This project is a Python-based license generator that allows users to create `LI
 
 ## Downloadable
 
+### Licenses
+
 - Academic Free License v3.0 (afl-3.0.json)
 - Apache License 2.0 (apache-2.0.json)
 - Artistic License 2.0 (artistic-2.0.json)
@@ -34,6 +36,9 @@ This project is a Python-based license generator that allows users to create `LI
 - Public Domain (pd.json)
 - The Unlicense (unlicense.json)
 - Zlib License (zlib.json)
+
+### Packages
+
 - C (Complete Package (All Licenses))
 - D (Default Package (MIT, Public Domain))
 
