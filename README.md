@@ -107,7 +107,7 @@ To add a new license manually:
 }
 ```
 
-> No matter what the file name is, it will show as whatever is in the **meta > name** field.
+> No matter what the file name is, it will show as whatever is in the **meta.name** field.
 
 ## Example Usage
 
